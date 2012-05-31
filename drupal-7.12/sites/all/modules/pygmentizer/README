@@ -1,0 +1,27 @@
+Provide an input filter which highlights inline codes by using <a href="http://pygments.org/">Pygments</a>.
+
+
+Prerequisite
+============
+You need a working Pygments on your host.
+See <a href="http://pygments.org/download/">how to install Pygments</a>.
+
+
+Installation
+============
+* Enable this module.
+* Go to admin/config/content/formats page, configure the text format in which you want to enable Pygmentizer.
+* In the configuration page check <strong>Highlight inline codes with Pygments</strong>. It'd be better to give Pygmentizer a lower weight or say a higher priority.
+* At bottom of configuration page switch to settings tab of Pygmentizer.
+* Set your Pygments' binary path, choose the way you want to wrap your inline codes and pick a highlighting style for you web site.
+* As mentioned at first in settings tab, don't forget to allow HTML tags required by Pygmentizer if you have <strong>HTML Filter</strong> enabled.
+
+
+Usage
+=====
+Depends on the codes wrapper you choose, you can put inline codes in either <pygmentize[ lang=php|html|...]></pygmentize> or <code></code>. The former way makes it possible to specify language. However Pygments will try to guess it if not explicitly specified. The latter way works with HTML <code> tag.
+
+
+Todo
+====
+* Need to test under Windows environment.

@@ -1,0 +1,270 @@
+<?php
+
+function pygmentizer_init() {
+  drupal_add_css(drupal_get_path('module', 'pygmentizer') . '/css/pygmentizer.css');
+  drupal_add_css(drupal_get_path('module', 'pygmentizer') . '/css/pygmentizer.styles.css');
+}
+
+/**
+ * Implementation of hook_permission().
+ */
+function pygmentizer_permission() {
+  return array(
+    'administer pygmentizer' => array(
+      'title' => t('Administer Pygmentizer'),
+    ),
+  );
+}
+
+/**
+ * Implementation of hook_filter_info().
+ */
+function pygmentizer_filter_info() {
+  $filters = array();
+
+  // We need this filter to be applied before others so we use 'prepare
+  // callback' here.
+  $filters['pygmentizer_inline'] = array(
+    'title'             => t('Highlight inline codes with Pygments'),
+    'cache'             => TRUE,
+    'prepare callback'  => '_pygmentizer_inline_prepare',
+    'process callback'  => '_pygmentizer_inline_process',
+    'tips callback'     => '_pygmentizer_inline_tip',
+    'settings callback' => '_pygmentizer_inline_settings',
+    'default settings'  => array(
+      'bin_path'      => '/usr/local/bin/pygmentize',
+      'codes_wrapper' => 'pygmentize',
+      'style'         => 'default',
+    ),
+  );
+
+  return $filters;
+}
+
+/**
+ * Escapes the content before the actual filtering happens.
+ */
+function _pygmentizer_inline_prepare($text, $filter, $format, $langcode, $cache, $cache_id) {
+  // Escape <pygmentize> or <code> tags.
+  switch ($filter->settings['codes_wrapper']) {
+    case 'code':
+      $pattern = '/<code([^>]*)>(.*?)<\/code>/s';
+      break;
+
+    default:
+      $pattern = '/<pygmentize([^>]*)>(.*?)<\/pygmentize>/s';
+      break;
+  }
+
+  $text = preg_replace($pattern, '[pygmentize$1]$2[/pygmentize]', $text);
+  return $text;
+}
+
+/**
+ * Performs the actual filtering.
+ */
+function _pygmentizer_inline_process($text, $filter, $format, $langcode, $cache, $cache_id) {
+  $bin_path = $filter->settings['bin_path'];
+  $style = $filter->settings['style'];
+  return _pygmentizer_inline_pygmentize($bin_path, $style, $text);
+}
+
+/**
+ * Core function does the real job.
+ */
+function _pygmentizer_inline_pygmentize($bin_path, $style, $text) {
+  $pattern = '/\[pygmentize([^]]*)\](.*?)\[\/pygmentize\]/se';
+  return preg_replace($pattern, "_pygmentizer_replace_callback('$1', '$2', \$bin_path, \$style)", $text);
+}
+
+/**
+ * End-user-facing filter usage guidelines for the filter.
+ */
+function _pygmentizer_inline_tip($filter, $format, $long) {
+  switch ($filter->settings['codes_wrapper']) {
+    case 'code':
+      return t('Use %syntax to highlight inline codes. See !available_languages.',
+        array(
+          '%syntax' => '<code>...</code>',
+          '!available_languages' => l(t('available languages'), 'http://pygments.org/languages/'),
+        )
+      );
+
+    default:
+      // we catch all other cases here, actually it should be only possible to
+      // be 'pygmentize'
+      return t('Use %syntax to highlight inline codes. It will guess if "lang" is not specified. See !available_languages.',
+        array(
+          '%syntax' => '<pygmentize [lang=php|html|...]>...</pygmentize>',
+          '!available_languages' => l(t('available languages'), 'http://pygments.org/languages/'),
+        )
+      );
+  }
+}
+
+/**
+ * Configuration form elements for the filter.
+ */
+function _pygmentizer_inline_settings($form, &$form_state, $filter, $format, $defaults, $filters) {
+  $filter->settings += $defaults;
+  
+  $elements = array();
+
+  $notice  = '<ul>';
+  $notice .=   '<li>' . t('You need to allow these HTML tags if you have !limit_allowed_html_tags_filter enabled: @tags.', array(
+    '!limit_allowed_html_tags_filter' => '<strong>Limit allowed HTML tags Filter</strong>',
+    '@tags' => '<div> <table> <tbody> <tr> <td> <pre> <span>',
+  )) . '</li>';
+  $notice .= '</ul>';
+
+  $elements['notice'] = array(
+    '#type' => 'item',
+    '#title' => t('Notice'),
+    '#markup' => $notice,
+  );
+
+  $elements['bin_path'] = array(
+    '#title' => t('Pygment binary path'),
+    '#description' => t('If you are using Linux, command "which pygmentize" could help you.'),
+    '#type' => 'textfield',
+    '#default_value' => $filter->settings['bin_path'],
+  );
+
+  $elements['codes_wrapper'] = array(
+    '#title' => t('Codes wrapper in'),
+    '#description' => '<span style="color:#FF0000">' . t('Warning: changing this may lead to miss old highlights.') . '</span>',
+    '#type' => 'radios',
+    '#options' => array(
+      'pygmentize' => check_plain(t('<pygmentize[ lang=php|html|...]>...</pygmentize>')),
+      'code' => check_plain(t('<code>...</code>')),
+    ),
+    '#default_value' => $filter->settings['codes_wrapper'],
+  );
+
+  $elements['style'] = array(
+    '#title' => t('Style'),
+    '#type' => 'select',
+    '#options' => array(
+      'monokai' => 'monokai',
+      'manni' => 'manni',
+      'perldoc' => 'perldoc',
+      'borland' => 'borland',
+      'colorful' => 'colorful',
+      'default' => 'default',
+      'murphy' => 'murphy',
+      'vs' => 'vs',
+      'trac' => 'trac',
+      'tango' => 'tango',
+      'fruity' => 'fruity',
+      'autumn' => 'autumn',
+      'bw' => 'bw',
+      'emacs' => 'emacs',
+      'vim' => 'vim',
+      'pastie' => 'pastie',
+      'friendly' => 'friendly',
+      'native' => 'native',
+      //'github' => 'github',
+    ),
+    '#default_value' => $filter->settings['style'],
+  );
+
+  $preview_code = <<<PREVIEW
+[pygmentize]
+<?php
+function example_form(&\$form_state, \$url) {
+
+    // This is just a very simple form with one textfield, and a
+    // submit button.
+    \$form['example_text'] = array(
+      '#type' => 'textfield',
+      '#title' => st('Testing text'),
+      '#default_value' => '',
+      '#size' => 45,
+      '#maxlength' => 45,
+      '#required' => TRUE,
+      '#description' => st('This is an example form demonstrating forms usage in the installer profiles tasks. Enter any text to see what happens.'),
+    );
+
+    \$form['continue'] = array(
+      '#type' => 'submit',
+      '#value' => st('Continue'),
+    );
+
+    // Note that #action is set to the url passed through from
+    // installer, ensuring that it points to the same page, and
+    // #redirect is FALSE to avoid broken installer workflow.
+    \$form['errors'] = array();
+    \$form['#action'] = \$url;
+    \$form['#redirect'] = FALSE;
+
+  return \$form;
+}
+?>
+[/pygmentize]
+PREVIEW;
+
+  $style = $filter->settings['style'];
+  $bin_path = $filter->settings['bin_path'];
+  $pattern = '/\[pygmentize([^]]*)\](.*?)\[\/pygmentize\]/se';
+
+  $elements['style_preview'] = array(
+    '#type' => 'item',
+    '#title' => t('Style preview'),
+    '#markup' => _pygmentizer_inline_pygmentize($bin_path, $style, $preview_code),
+  );
+
+  return $elements;
+}
+
+/**
+ * Callback function. Get matched contents and call highlighter.
+ * $matches[1] is arguments string.
+ * $matches[2] is code string to be highlighted.
+ */
+function _pygmentizer_replace_callback($params, $code, $bin_path, $style) {
+  // prepare params
+  $cmd_params = _pygmentizer_params_cmdize(trim($params));
+
+  // user input must be escaped
+  $code = escapeshellarg($code);
+
+  $command = "echo $code | $bin_path $cmd_params";
+  $pygmentized = shell_exec($command);
+
+  $class = "pygmentized $style";
+  return '<div class="' . $class . '">' . $pygmentized . '</div>';
+}
+
+/**
+ * Parse options from user input and generate Pygments options.
+ * Acceptable options:
+ *   lang: specify lexer
+ */
+function _pygmentizer_params_cmdize($input) {
+  $args = array(
+    '-f html',
+    '-P linenos=table',
+  );
+  $guess = TRUE;
+
+  if (!empty($input)) {
+    foreach (explode(' ', $input) AS $arg) {
+      list($key, $value) = explode('=', $arg);
+      switch (strtolower(trim($key))) {
+        case 'lang':
+          $args[] = '-l ' . trim($value);
+          $guess = FALSE;
+          break;
+
+        default:
+          break;
+      }
+    }
+  }
+
+  if ($guess) {
+    $args[] = '-g';
+  }
+
+  return implode(' ', $args);
+}

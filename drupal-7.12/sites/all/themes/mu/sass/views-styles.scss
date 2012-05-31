@@ -1,0 +1,98 @@
+/**
+ * @file
+ * Views Styling
+ */
+
+@import "base";
+
+
+/*
+ * Views' admin tabs
+ *
+ * The views admin tabs use the same classes as the secondary tabs. We prevent
+ * some of our tab styling from bleeding into (and breaking) the Views admin
+ * pages. If your sub-theme isn't used for admin pages, you can remove this
+ * entire section.
+ */
+.views-displays .secondary {
+  li {
+    float: none;
+    margin: 0 6px 0;
+  }
+
+  a:link,
+  a:visited {
+    @include single-text-shadow(none);
+    padding: 2px 7px 3px;
+  }
+
+  .open > a {
+    @include border-radius(7px 7px 0 0);
+    &:hover {
+      color: #333;
+    }
+  }
+
+  .action-list li {
+    margin: 0;
+    &:first-child {
+      @include border-radius(0 7px 0 0);
+    }
+    &:last-child {
+      @include border-radius(0 0 7px 7px);
+    }
+  }
+}
+
+.views_slideshow_main {
+    .views-field-title {
+	font-size: $h3-font-size;
+ 	a {
+	    text-decoration: none;
+	}
+    }
+}
+.views-slideshow-controls-bottom {
+    padding-top: 10px;
+}
+
+.views-slideshow-controls-text-pause a {
+  display: none;				     
+}
+.view-clone-of-recent-notes h3 a {
+   text-decoration: none;
+   font-size: 1.35em;
+   line-height: 1.231em;
+   color: #333;
+}
+.view-clone-of-recent-notes .views-row-last {
+  padding-bottom: 20px;
+}
+.view-frontpage-slideshow {
+   @include rounded;
+   border: 1px #CCC dotted;
+   padding: 15px;
+}
+.view-frontpage-slideshow h2 {
+  font-size: 2em;
+  line-height: 1.385em;
+  margin: 0 0 .692em 0;
+  font-weight: normal;   
+}
+.view-frontpage-slideshow img {
+   float: left ;
+   margin-right: 15px;
+}
+.view-frontpage-slideshow .views-field-title a { 
+   decoration: none;
+   color: #301313;
+   font-size: 1.538em;
+   font-family: $neue;
+}
+.view-fancy-taxonomy-term {
+  .views-field-field-image {
+    img {
+        /* float: left; */
+    }
+  }
+}

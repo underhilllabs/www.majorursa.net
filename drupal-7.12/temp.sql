@@ -1,0 +1,70 @@
+-- MySQL dump 10.13  Distrib 5.1.61, for debian-linux-gnu (i486)
+--
+-- Host: localhost    Database: mu_dev
+-- ------------------------------------------------------
+-- Server version	5.1.61-0+squeeze1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `comment`
+--
+
+DROP TABLE IF EXISTS `comment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `comment` (
+  `cid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique comment ID.',
+  `pid` int(11) NOT NULL DEFAULT '0' COMMENT 'The comment.cid to which this comment is a reply. If set to 0, this comment is not a reply to an existing comment.',
+  `nid` int(11) NOT NULL DEFAULT '0' COMMENT 'The node.nid to which this comment is a reply.',
+  `uid` int(11) NOT NULL DEFAULT '0' COMMENT 'The users.uid who authored the comment. If set to 0, this comment was created by an anonymous user.',
+  `subject` varchar(64) NOT NULL DEFAULT '' COMMENT 'The comment title.',
+  `hostname` varchar(128) NOT NULL DEFAULT '' COMMENT 'The author’s host name.',
+  `created` int(11) NOT NULL DEFAULT '0' COMMENT 'The time that the comment was created, as a Unix timestamp.',
+  `changed` int(11) NOT NULL DEFAULT '0' COMMENT 'The time that the comment was last edited, as a Unix timestamp.',
+  `status` tinyint(3) unsigned NOT NULL DEFAULT '1' COMMENT 'The published status of a comment. (0 = Not Published, 1 = Published)',
+  `thread` varchar(255) NOT NULL COMMENT 'The vancode representation of the comment’s place in a thread.',
+  `name` varchar(60) DEFAULT NULL COMMENT 'The comment author’s name. Uses users.name if the user is logged in, otherwise uses the value typed into the comment form.',
+  `mail` varchar(64) DEFAULT NULL COMMENT 'The comment author’s e-mail address from the comment form, if user is anonymous, and the ’Anonymous users may/must leave their contact information’ setting is turned on.',
+  `homepage` varchar(255) DEFAULT NULL COMMENT 'The comment author’s home page address from the comment form, if user is anonymous, and the ’Anonymous users may/must leave their contact information’ setting is turned on.',
+  `language` varchar(12) NOT NULL DEFAULT '' COMMENT 'The languages.language of this comment.',
+  PRIMARY KEY (`cid`),
+  KEY `comment_status_pid` (`pid`,`status`),
+  KEY `comment_num_new` (`nid`,`status`,`created`,`cid`,`thread`),
+  KEY `comment_uid` (`uid`),
+  KEY `comment_nid_language` (`nid`,`language`),
+  KEY `comment_created` (`created`)
+) ENGINE=InnoDB AUTO_INCREMENT=555 DEFAULT CHARSET=utf8 COMMENT='Stores comments and associated data.';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `comment`
+--
+
+LOCK TABLES `comment` WRITE;
+/*!40000 ALTER TABLE `comment` DISABLE KEYS */;
+set autocommit=0;
+INSERT INTO `comment` VALUES (222,0,123,0,'order accutane 3136','109.163.226.224',1335823012,1335823012,0,'01/','avermAmoraNah','','','und'),(224,0,123,0,'buy cheap cialis 15764','109.163.226.224',1335924433,1335924432,0,'03/','assonalge','','','und'),(225,0,123,0,'levitra without prescription 4626','109.163.226.224',1335972475,1335972475,0,'04/','cooveriRido','','','und'),(226,0,123,0,'generic finasteride 13320','109.163.226.224',1336014388,1336014388,0,'05/','Slowelcochemi','','','und'),(228,0,73,0,'jane shilton handbags gambella handbags ','46.118.124.2',1336077462,1336077462,0,'01/','replica handbags Pione','','','und'),(229,0,123,0,'buy generic cialis 6404','109.163.226.224',1336107070,1336107070,0,'07/','Arrowllek','','','und'),(230,0,133,0,'Working on an Issue from the Drupal Issue Queue | Major Ursa','85.177.1.124',1336132545,1336132545,0,'01/','Myrtis','','','und'),(231,0,121,0,'Today is good hour','91.207.5.206',1336144391,1336144391,0,'01/','Etefeavaiflep','','','und'),(232,0,123,0,'buy cheap levitra 11009','109.163.226.224',1336153055,1336153054,0,'08/','Typepraitspet','','','und'),(233,0,123,0,'cheap nolvadex 18472','109.163.226.224',1336202196,1336202196,0,'09/','NeseShows','','','und'),(234,0,131,0,'New Scuttle Developments | Major Ursa','173.234.89.186',1336230773,1336230773,0,'01/','Joe','','','und'),(235,0,74,0,'Most mail in there','187.60.96.7',1336231623,1336231622,0,'01/','bibipbub4','','','und'),(236,0,137,0,'Notes on Drupal Features | Major Ursa','86.27.142.220',1336275724,1336275724,0,'01/','Milton','','','und'),(237,0,73,0,'vimax funciona','94.102.48.116',1336277359,1336277359,0,'02/','cokebousTok','','','und'),(238,0,72,0,'&','188.227.176.155',1336424121,1336424120,0,'01/','rikertrikerr','','','und'),(239,0,74,0,'wwadjd','158.255.7.240',1336479072,1336479071,0,'02/','kegdfa','','','und'),(240,0,137,0,'Notes on Drupal Features | Major Ursa','184.154.76.210',1336496890,1336496890,0,'02/','Mickey','','','und'),(241,0,114,0,'nDqHxyCpBBF','188.138.84.93',1336500743,1336500743,0,'01/','dexlsjm','','','und'),(242,0,79,0,'jJnoflynpZXvSPzG','188.138.84.93',1336500775,1336500775,0,'01/','rakoyls','','','und'),(243,0,106,0,'OOJTajpmgVVwNfx','188.138.84.93',1336500814,1336500813,0,'01/','wigaiux','','','und'),(244,0,121,0,'CopOWBhOCEdLLs','188.138.84.93',1336500821,1336500821,0,'02/','vclfceix','','','und'),(245,0,74,0,'Provide value','202.51.120.58',1336529347,1336529345,0,'03/','digirev','','','und'),(246,0,107,0,'Git Log to the Rescue | Major Ursa','178.73.212.230',1336548500,1336548500,0,'01/','Tawanna','','','und'),(247,0,88,0,'small loans 1479','188.227.181.211',1336590719,1336590719,0,'01/','instant loans 31730','','','und'),(248,0,121,0,'Today is healthy heyday','91.207.5.206',1336628049,1336628048,0,'03/','lizFloumblelm','','','und'),(249,0,107,0,'Git Log to the Rescue | Major Ursa','201.236.80.197',1336628460,1336628460,0,'02/','Jared','','','und'),(250,0,126,0,'small loans 71487','188.227.181.211',1336645372,1336645372,0,'01/','same day loans 52191','','','und'),(251,0,123,0,'nolvadex 10 mg 10916','83.136.86.105',1336679013,1336679013,0,'0a/','shecekixArrex','','','und'),(252,0,88,0,'cash loans online 75055','188.227.181.211',1336685069,1336685069,0,'02/','cash advance 4469','','','und'),(253,0,123,0,'cialis online 3567','83.136.86.21',1336687276,1336687276,0,'0b/','LoxOntona','','','und'),(254,0,123,0,'buy clomid 14280','83.136.86.105',1336717794,1336717793,0,'0c/','TiseeTomSoity','','','und'),(256,0,123,0,'purchase cytotec 12283','83.136.86.105',1336764363,1336764363,0,'0e/','IncareeSeet','','','und'),(258,0,123,0,'buy silagra online 9113','83.136.86.105',1336803402,1336803402,0,'0g/','Emeldvedanove','','','und'),(259,0,119,0,'comprar vimax','173.242.123.4',1336805798,1336805797,0,'01/','cokebousTok','','','und'),(261,0,112,0,'hi','84.172.241.248',1336837670,1336837669,0,'01/','PeterPimmel','','','und'),(262,0,112,0,'hi','84.172.241.248',1336837672,1336837672,0,'02/','PeterPimmel','','','und'),(263,0,112,0,'subject','84.172.241.248',1336840775,1336840775,0,'03/','FreeSexcam','','','und'),(264,0,112,0,'subject','84.172.241.248',1336840777,1336840777,0,'04/','FreeSexcam','','','und'),(265,0,123,0,'buy finasteride 6155','83.136.86.105',1336845180,1336845179,0,'0h/','AudirmAdusa','','','und'),(266,0,123,0,'purchase cialis online 18373','83.136.86.21',1336856373,1336856373,0,'0i/','rarmedapelm','','','und'),(267,0,131,0,'New Scuttle Developments | Major Ursa','64.250.116.197',1336858934,1336858934,0,'02/','Adeline','','','und'),(268,0,112,0,'hi','84.172.241.248',1336873531,1336873530,0,'05/','KreditSchufa','','','und'),(269,0,112,0,'hi','84.172.241.248',1336873534,1336873533,0,'06/','KreditSchufa','','','und'),(270,0,123,0,'cheap plavix 11268','83.136.86.105',1336881477,1336881476,0,'0j/','cErsecrulttut','','','und'),(271,0,130,0,'Do you know that graco','37.45.184.98',1336903122,1336903122,0,'01/','Anonymous','','','und'),(273,0,112,0,'hi','84.172.217.237',1336931588,1336931587,0,'07/','DieChefin','','','und'),(274,0,115,0,'thanks representing quota','122.72.112.166',1336932406,1336932406,0,'01/','Murphy','','','und'),(275,0,123,0,'keflex online 7744','83.136.86.105',1336942403,1336942402,0,'0l/','Taipleseilter','','','und'),(277,0,112,0,'salute','109.73.76.39',1336959245,1336959244,0,'08/','Latex','','','und'),(279,0,123,0,'buy zovirax 400 mg 10725','83.136.86.105',1336980132,1336980131,0,'0n/','psypeAlopsy','','','und'),(280,0,123,0,'cheap Diflucan online 1562','83.136.86.105',1337027786,1337027785,0,'0o/','Cheehaphy','','','und'),(281,0,123,0,'buy cheap cialis 12579','83.136.86.21',1337031017,1337031017,0,'0p/','Diolasserlino','','','und'),(282,0,123,0,'synthroid online without prescription 11753','83.136.86.105',1337066141,1337066140,0,'0q/','Thungussy','','','und'),(284,0,112,0,'nice','109.73.76.39',1337091562,1337091562,0,'09/','MarkyMark','','','und'),(286,0,72,0,'hiya','188.227.176.155',1337113354,1337113354,0,'02/','RaseChatteHet','','','und'),(287,0,123,0,'cialis 20 mg 5808','83.136.86.21',1337117084,1337117084,0,'0t/','ceateeveddy','','','und'),(288,0,112,0,'yo','109.73.76.39',1337128052,1337128052,0,'0a/','MarkyMark','','','und'),(289,0,123,0,'Accutane without prescription 11602','83.136.86.105',1337151543,1337151543,0,'0u/','frereabbatrob','','','und'),(292,0,123,0,'buy dutasteride 2289','83.136.86.105',1337191998,1337191998,0,'0w/','Quancyuncebra','','','und'),(293,0,72,0,'does no no work','188.227.176.155',1337192780,1337192779,0,'03/','Acertjeme','','','und'),(294,0,112,0,'wow','109.73.76.39',1337202511,1337202510,0,'0b/','HardyLatte','','','und'),(297,0,123,0,'purchase bactrim 20357','83.136.86.105',1337230969,1337230969,0,'0z/','Fleclatmeta','','','und'),(298,0,112,0,'Wow','109.73.76.39',1337270175,1337270174,0,'0c/','MarkJacke','','','und'),(302,0,112,0,'Hello','109.73.76.39',1337297221,1337297220,0,'0d/','SchufaDdood','','','und'),(303,0,72,0,'wowzers','176.53.58.137',1337302606,1337302606,0,'04/','rikeryrikerb','','','und'),(313,0,113,0,'loans online 90975','188.227.181.211',1337330300,1337330300,0,'0b/','instant loans','','','und'),(314,0,88,0,'comprar vimax','187.19.196.45',1337334571,1337334570,0,'04/','cokebousTok','','','und'),(323,0,68,0,'Приветствую','31.181.29.219',1337339217,1337339217,0,'01/','impaigntage','','','und'),(324,0,112,0,'Sports Betting Myths As Opposed To The Legitimate Facts','176.227.195.66',1337346233,1337346233,0,'0e/','Birgithesk','','','und'),(325,0,107,0,'Git Log to the Rescue | Major Ursa','77.49.80.8',1337365160,1337365159,0,'03/','Cruz','','','und'),(327,0,123,0,'generic finasteride 1551','192.162.19.193',1337428562,1337428562,0,'115/','gatiasiaHem','','','und'),(328,0,119,0,'Apache Notes | Major Ursa','173.208.19.167',1337451140,1337451140,0,'02/','Gilda','','','und'),(329,0,113,0,'short term loan 94551','188.227.181.211',1337455481,1337455481,0,'0c/','short term loan','','','und'),(330,0,123,0,'buy disulfiram online 8252','192.162.19.193',1337494116,1337494115,0,'116/','Deceboata','','','und'),(331,0,133,0,'Working on an Issue from the Drupal Issue Queue | Major Ursa','108.62.85.73',1337498090,1337498090,0,'02/','Ulrich','','','und'),(348,0,112,0,'hey there','109.73.76.39',1337517661,1337517660,0,'0f/','Hannes23','','','und'),(349,0,130,0,'vimax funciona','94.102.48.116',1337521026,1337521026,0,'0q/','cokebousTok','','','und'),(350,0,72,0,'losartan versus avapro avapro coupon ','178.137.82.160',1337524475,1337524475,0,'05/','tierb','','','und'),(360,0,123,0,'clomid without prescription 12457','192.162.19.193',1337549266,1337549266,0,'117/','Queeneide','','','und'),(361,0,137,0,'Notes on Drupal Features | Major Ursa','173.208.37.192',1337551308,1337551308,0,'03/','Natisha','','','und'),(362,0,112,0,'Amateur Live Cam ','109.73.76.39',1337559275,1337559274,0,'0g/','CamLive','','','und'),(379,0,123,0,'keflex cost 13218','192.162.19.193',1337601550,1337601550,0,'118/','NuhAcenue','','','und'),(388,0,74,0,'sdajga','158.255.7.240',1337623507,1337623506,0,'04/','eawsdj','','','und'),(448,0,112,0,'Sex Chat','109.73.76.39',1337649763,1337649763,0,'0h/','SexyTreffen','','','und'),(537,0,74,0,'khqhgs','158.255.7.240',1337691298,1337691298,0,'05/','sesqff','','','und'),(538,0,113,0,'quick loans 2250','188.227.181.211',1337709552,1337709552,0,'0e/','cash advance','','','und'),(547,0,139,0,'buy viagra prof','94.142.134.41',1337725629,1337725628,0,'01/','Weepattcheabe','','','und'),(548,0,139,0,'buy viagra prof','94.142.134.41',1337725631,1337725630,0,'02/','Weepattcheabe','','','und'),(549,0,139,0,'buy viagra prof','94.142.134.41',1337725633,1337725632,0,'03/','Weepattcheabe','','','und'),(550,0,139,0,'buy viagra prof','94.142.134.41',1337725635,1337725634,0,'04/','Weepattcheabe','','','und'),(551,0,139,0,'buy viagra prof','94.142.134.41',1337725637,1337725636,0,'05/','Weepattcheabe','','','und'),(552,0,139,0,'buy viagra prof','94.142.134.41',1337725639,1337725638,0,'06/','Weepattcheabe','','','und'),(553,0,139,0,'buy viagra prof','94.142.134.41',1337725641,1337725640,0,'07/','Weepattcheabe','','','und'),(554,0,139,0,'buy viagra prof','94.142.134.41',1337725643,1337725642,0,'08/','Weepattcheabe','','','und');
+/*!40000 ALTER TABLE `comment` ENABLE KEYS */;
+UNLOCK TABLES;
+commit;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2012-05-22 19:35:13

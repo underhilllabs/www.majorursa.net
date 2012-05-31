@@ -1,0 +1,115 @@
+
+/* ---------- Color Module Styles ----------- */
+
+body,
+body.overlay {
+  color: #301313;
+}
+.comment .comment-arrow {
+  border-color: #fffdf7;
+}
+#page,
+#main-wrapper,
+#main-menu-links li a.active,
+#main-menu-links li.active-trail a {
+  background: #fffdf7;
+}
+.tabs ul.primary li a.active {
+  background-color: #fffdf7;
+}
+.tabs ul.primary li.active a {
+  background-color: #fffdf7;
+  border-bottom: 1px solid #fffdf7;
+}
+#header {
+  background-color: #300a24;
+  background-image: -moz-linear-gradient(top, #300a24 0%, #300a24 100%);
+  background-image: -ms-linear-gradient(top, #300a24 0%, #300a24 100%);
+  background-image: -o-linear-gradient(top, #300a24 0%, #300a24 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #300a24), color-stop(1, #300a24));
+  background-image: -webkit-linear-gradient(top, #300a24 0%, #300a24 100%);
+  background-image: linear-gradient(top, #300a24 0%, #300a24 100%);
+}
+#site-name a {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    text-align: center;
+    margin: 0px 0 0px 0;
+    font-size: 40px;
+    letter-spacing: -2px;
+    color: white;
+    text-decoration: none;
+}
+h2 a {
+  font-size: 1.45em;
+  line-height: 1.6em;
+}
+#header .section a {
+  text-align: center;
+  margin: 0px 0 0px 0;
+  text-decoration: none;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+#header #name-and-slogan {
+  margin-bottom: 0px;
+}
+a {
+  color: #9d4040;
+}
+a:hover,
+a:focus {
+  color: #da2a2a;
+}
+a:active {
+  color: #e95353;
+}
+.sidebar .block {
+  background-color: #edede7;
+  border-color: #e7e7e7;
+}
+#page-wrapper,
+#footer-wrapper {
+  background: #2c2c28;
+}
+.region-header,
+.region-header a,
+.region-header li a.active,
+#name-and-slogan,
+#name-and-slogan a,
+#secondary-menu-links li a {
+  color: #ffffff;
+}
+
+code,pre{
+  padding:0 3px 2px;
+  font-family:Monaco, Andale Mono, Courier New, monospace;
+  font-size:12px;-webkit-border-radius:3px;-moz-border-radius:3px;
+  border-radius:3px;
+}
+code{
+  padding:1px 3px;
+}
+pre{
+  display:block;
+  padding:8.5px;
+  margin:0 0 18px;
+  /* line-height:18px; */
+  font-size:12px;
+  border:1px solid #ccc;
+  border:1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius:3px;
+  -moz-border-radius:3px;
+  border-radius:3px;
+  white-space:pre;
+  white-space:pre-wrap;
+  word-wrap:break-word;
+}
+pre {
+  background-color: #EDEDE7;
+  /* color: navajoWhite; */
+  
+}
+pre code {
+  /* background-color: #002B36; */
+}

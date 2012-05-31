@@ -1,0 +1,13 @@
+name = Pygmentizer
+description = Highlight codes by <a href="http://pygments.org" target="_blank">Pygments</a>.
+
+core = 7.x
+
+files[] = pygmentizer.module
+
+; Information added by drupal.org packaging script on 2011-03-18
+version = "7.x-1.0-alpha1"
+core = "7.x"
+project = "pygmentizer"
+datestamp = "1300458968"
+

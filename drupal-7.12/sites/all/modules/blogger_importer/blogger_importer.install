@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * Install hooks for Blogger Importer
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function blogger_importer_uninstall() {
+ variable_del('blogger_importer_comment_per_node');
+ variable_del('blogger_importer_format');
+ variable_del('blogger_importer_image_path');
+ variable_del('blogger_importer_limit');
+ variable_del('blogger_importer_memory');
+ variable_del('blogger_importer_node_tag_field');
+ variable_del('blogger_importer_node_type');
+ variable_del('blogger_importer_tags_vid');
+ variable_del('blogger_importer_xml_path');
+}
+
+/**
+ * update from 1st to 2nd dev release - clear the cached entries because structure changed
+ * (warning: this will wipe the saved nid's, potentially causing duplicate nodes)
+ */
+function blogger_importer_update_6101() {
+  cache_clear_all('blogger_importer_results', 'cache');
+  return array(
+    'success' => TRUE,
+    'query' => t('Deleted previously cached blogger_importer entries because import structure changed.'),
+  );
+}
+

@@ -1,0 +1,123 @@
+/**
+ * @file
+ * Views Styling
+ */
+/*
+ * Views' admin tabs
+ *
+ * The views admin tabs use the same classes as the secondary tabs. We prevent
+ * some of our tab styling from bleeding into (and breaking) the Views admin
+ * pages. If your sub-theme isn't used for admin pages, you can remove this
+ * entire section.
+ */
+/* line 18, ../sass/views-styles.scss */
+.views-displays .secondary li {
+  float: none;
+  margin: 0 6px 0;
+}
+/* line 24, ../sass/views-styles.scss */
+.views-displays .secondary a:link,
+.views-displays .secondary a:visited {
+  text-shadow: none;
+  padding: 2px 7px 3px;
+}
+/* line 29, ../sass/views-styles.scss */
+.views-displays .secondary .open > a {
+  -webkit-border-radius: 7px 7px 0 0;
+  -moz-border-radius: 7px 7px 0 0;
+  -ms-border-radius: 7px 7px 0 0;
+  -o-border-radius: 7px 7px 0 0;
+  border-radius: 7px 7px 0 0;
+}
+/* line 31, ../sass/views-styles.scss */
+.views-displays .secondary .open > a:hover {
+  color: #333;
+}
+/* line 36, ../sass/views-styles.scss */
+.views-displays .secondary .action-list li {
+  margin: 0;
+}
+/* line 38, ../sass/views-styles.scss */
+.views-displays .secondary .action-list li:first-child {
+  -webkit-border-radius: 0 7px 0 0;
+  -moz-border-radius: 0 7px 0 0;
+  -ms-border-radius: 0 7px 0 0;
+  -o-border-radius: 0 7px 0 0;
+  border-radius: 0 7px 0 0;
+}
+/* line 41, ../sass/views-styles.scss */
+.views-displays .secondary .action-list li:last-child {
+  -webkit-border-radius: 0 0 7px 7px;
+  -moz-border-radius: 0 0 7px 7px;
+  -ms-border-radius: 0 0 7px 7px;
+  -o-border-radius: 0 0 7px 7px;
+  border-radius: 0 0 7px 7px;
+}
+
+/* line 48, ../sass/views-styles.scss */
+.views_slideshow_main .views-field-title {
+  font-size: 18.72px;
+}
+/* line 50, ../sass/views-styles.scss */
+.views_slideshow_main .views-field-title a {
+  text-decoration: none;
+}
+
+/* line 55, ../sass/views-styles.scss */
+.views-slideshow-controls-bottom {
+  padding-top: 10px;
+}
+
+/* line 59, ../sass/views-styles.scss */
+.views-slideshow-controls-text-pause a {
+  display: none;
+}
+
+/* line 62, ../sass/views-styles.scss */
+.view-clone-of-recent-notes h3 a {
+  text-decoration: none;
+  font-size: 1.35em;
+  line-height: 1.231em;
+  color: #333;
+}
+
+/* line 68, ../sass/views-styles.scss */
+.view-clone-of-recent-notes .views-row-last {
+  padding-bottom: 20px;
+}
+
+/* line 71, ../sass/views-styles.scss */
+.view-frontpage-slideshow {
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border: 1px #CCC dotted;
+  padding: 15px;
+}
+
+/* line 76, ../sass/views-styles.scss */
+.view-frontpage-slideshow h2 {
+  font-size: 2em;
+  line-height: 1.385em;
+  margin: 0 0 .692em 0;
+  font-weight: normal;
+}
+
+/* line 82, ../sass/views-styles.scss */
+.view-frontpage-slideshow img {
+  float: left;
+  margin-right: 15px;
+}
+
+/* line 86, ../sass/views-styles.scss */
+.view-frontpage-slideshow .views-field-title a {
+  decoration: none;
+  color: #301313;
+  font-size: 1.538em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* line 94, ../sass/views-styles.scss */
+.view-fancy-taxonomy-term .views-field-field-image img {
+  /* float: left; */
+}

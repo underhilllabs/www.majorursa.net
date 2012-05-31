@@ -1,0 +1,141 @@
+/**
+ * @file
+ * Node Styling
+ *
+ * Style anything that isn't in the $content variable.
+ */
+/* line 11, ../sass/nodes.scss */
+.node {
+  /* Node wrapper */
+}
+/* line 13, ../sass/nodes.scss */
+.preview .node {
+  /* Preview of the content before submitting new or updated content */
+  /* background-color: #ffffea; */
+  /* Drupal core uses a #ffffea background */
+}
+/* line 17, ../sass/nodes.scss */
+.node .node-title {
+  /* Node title */
+  font-size: 32px;
+}
+/* line 21, ../sass/nodes.scss */
+.node .user-picture {
+  /* The picture of the node author */
+}
+/* line 24, ../sass/nodes.scss */
+.node .submitted {
+  /* The "posted by" information */
+  font-size: 12px;
+  margin: 0px;
+}
+/* line 29, ../sass/nodes.scss */
+.node .content {
+  /* Node's content wrapper */
+}
+/* line 32, ../sass/nodes.scss */
+.node ul.links {
+  /* Node links. See also the ul.links declaration in the pages.css. */
+}
+/* line 36, ../sass/nodes.scss */
+.node .field-name-field-image img {
+  margin-top: 22px;
+  margin-right: 15px;
+  margin-bottom: 5px;
+  float: left;
+}
+
+/* line 48, ../sass/nodes.scss */
+.node-promoted {
+  /* A node that has been promoted to the front page */
+}
+
+/* line 51, ../sass/nodes.scss */
+.node-sticky {
+  /* A sticky node (displayed before others in a list) */
+}
+
+/* line 54, ../sass/nodes.scss */
+.node-by-viewer {
+  /* A node created by the current user */
+}
+
+/* line 57, ../sass/nodes.scss */
+.node-teaser {
+  /* A node displayed as teaser */
+  border-bottom: 1px solid #D3D7D9;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+}
+/* line 61, ../sass/nodes.scss */
+.node-teaser ul.links {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  *zoom: 1;
+  list-style: none;
+}
+/* line 60, ../../../../../../../../lib/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+.node-teaser ul.links li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+  white-space: nowrap;
+  display: inline;
+  float: left;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+/* line 48, ../../../../../../../../lib/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+.node-teaser ul.links li:first-child, .node-teaser ul.links li.first {
+  padding-left: 0;
+}
+/* line 49, ../../../../../../../../lib/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+.node-teaser ul.links li:last-child {
+  padding-right: 0;
+}
+/* line 50, ../../../../../../../../lib/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+.node-teaser ul.links li.last {
+  padding-right: 0;
+}
+/* line 64, ../sass/nodes.scss */
+.node-teaser ul.links li {
+  float: left;
+}
+
+/*
+ * All nodes are given a node-FOO class that describes the type of content that
+ * it is. If you create a new content type called "my-custom-type", it will
+ * receive a "node-my-custom-type" class.
+ */
+/* line 77, ../sass/nodes.scss */
+.node-page {
+  /* Page content node */
+}
+
+/* line 80, ../sass/nodes.scss */
+.node-article {
+  /* Article content node */
+}
+
+/* line 83, ../sass/nodes.scss */
+.node-unpublished {
+  /* Unpublished nodes */
+  /* background-color: #fff4f4; */
+  /* Drupal core uses a #fff4f4 background */
+}
+/* line 86, ../sass/nodes.scss */
+.node-unpublished p.unpublished {
+  /* The word "Unpublished" displayed underneath the content. */
+  height: 0;
+  overflow: visible;
+  color: #d8d8d8;
+  font-size: 75px;
+  line-height: 1;
+  font-family: Impact, "Arial Narrow", Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  word-wrap: break-word;
+}
