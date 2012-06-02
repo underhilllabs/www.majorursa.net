@@ -25,6 +25,11 @@ regions[sidebar_first]  = Left sidebar
 regions[sidebar_second] = Right sidebar
 regions[footer]         = Footer
 regions[page_bottom]    = Page bottom
+regions[front_cat_1]    = Front Category First
+regions[front_cat_2]    = Front Category Second
+regions[front_cat_3]    = Front Category Third
+regions[front_cat_4]    = Front Category Fourth
+
 
 ; Information added by drupal.org packaging script on 2011-01-11
 version = "7.x-1.0"
