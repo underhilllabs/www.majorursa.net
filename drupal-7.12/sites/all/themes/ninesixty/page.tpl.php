@@ -4,22 +4,26 @@
 <div id="page" class="container-16 clearfix">
 
   <div id="site-header" class="clearfix">
-    <div id="branding" class="grid-4 clearfix">
+    <div id="branding" class="grid-16 clearfix">
     <?php if ($linked_logo_img): ?>
-      <span id="logo" class="grid-1 alpha"><?php print $linked_logo_img; ?></span>
+      <span id="logo" class="grid-3 alpha"><?php print $linked_logo_img; ?></span>
     <?php endif; ?>
     <?php if ($linked_site_name): ?>
-      <h1 id="site-name" class="grid-3 omega"><?php print $linked_site_name; ?></h1>
+      <h1 id="site-name" class="grid-10 omega"><?php print $linked_site_name; ?></h1>
     <?php endif; ?>
     <?php if ($site_slogan): ?>
       <div id="site-slogan" class="grid-3 omega"><?php print $site_slogan; ?></div>
     <?php endif; ?>
+    <?php if($secondary_menu_links): ?>
+       <div id="secondary_menu grid-3 omega">
+         <?php print $secondary_menu_links; ?>
+       </div>
+    <?php endif; ?>
     </div>
 
-  <?php if ($main_menu_links || $secondary_menu_links): ?>
-    <div id="site-menu" class="grid-12">
+  <?php if ($main_menu_links ): ?>
+    <div id="site-menu" class="grid-16">
       <?php print $main_menu_links; ?>
-      <?php print $secondary_menu_links; ?>
     </div>
   <?php endif; ?>
 
