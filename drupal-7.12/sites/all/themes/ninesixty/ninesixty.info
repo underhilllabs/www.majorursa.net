@@ -10,7 +10,7 @@ engine = phptemplate
 stylesheets[all][] = styles/framework/reset.css
 stylesheets[all][] = styles/framework/text.css
 stylesheets[all][] = styles/framework/960.css
-stylesheets[all][] = styles/framework/debug.css
+; stylesheets[all][] = styles/framework/debug.css
 
 ; Theme specific styles. Any sub-themes should override this.
 stylesheets[all][] = styles/styles.css
@@ -25,6 +25,8 @@ regions[sidebar_first]  = Left sidebar
 regions[sidebar_second] = Right sidebar
 regions[footer]         = Footer
 regions[page_bottom]    = Page bottom
+
+; Custom regions. The four blocks for Front Page. Only appear in page-front.tpl.php
 regions[front_cat_1]    = Front Category First
 regions[front_cat_2]    = Front Category Second
 regions[front_cat_3]    = Front Category Third

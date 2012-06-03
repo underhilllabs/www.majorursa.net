@@ -39,3 +39,111 @@ ul.secondary-menu {
 #site-menu {
   background: #ddd;
 }
+
+h1 {
+  font-size: 2em;
+  line-height: 1.385em;
+  margin: 0 0 .692em 0;
+  font-weight: normal;
+}
+h2 {
+  font-size: 1.538em;
+  line-height: 1.35em;
+  margin: 0 0 .45em 0;
+  font-weight: normal;
+  display: block;
+  -webkit-margin-before: 0.83em;
+  -webkit-margin-after: 0.83em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
+h3 {
+  font-size: 1.231em;
+  line-height: 1.6875em;
+  margin: 0 0 .5625em 0;
+  display: block;
+  font-size: 1.17em;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-weight: bold;
+}
+h1, h2, h3, h4 {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+body, caption, th, td, input, textarea, select, option, legend, fieldset {
+  font-family: "Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
+}
+
+/* Start Views slideshow  */
+.view-frontpage-slideshow {
+   border: 1px #CCC dotted;
+   padding: 15px;
+}
+.view-frontpage-slideshow h2 {
+  font-size: 2em;
+  line-height: 1.385em;
+  margin: 0 0 .692em 0;
+  font-weight: normal;   
+}
+.view-frontpage-slideshow img {
+   float: left ;
+   margin-right: 15px;
+}
+.view-frontpage-slideshow .views-field-title a {
+   decoration: none;
+   color: #301313;
+   font-size: 1.538em;
+   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+/* End Views Slideshow */
+
+/* Start Front Page Blocks */
+.view-front-cat-block {
+    background: white;
+    padding: 0.2em 1em 1em 1em;
+}
+.view-front-cat-block h1 {
+    text-decoration: none;
+    margin-bottom: 0.0em;
+}
+.view-front-cat-block img {
+    float: left;
+    padding: 3px;
+    border: #999 solid 1px;
+    background: white;
+    margin-right: 0.3em;
+}
+.view-front-block-title {
+    border-bottom: 5px solid #300A24;
+    margin: 0 0 1em 0;
+}
+
+.view-front-cat-block .views-row {
+    padding-bottom: .6em;
+    border-bottom: 1px dashed #999;
+    margin-bottom: 1em;
+}
+
+.view-front-cat-block .views-row a {
+    text-decoration: none;
+    /* font-size: 1.231em; */
+    margin: 0 0 0 0;
+    display: block;
+    font-size: 1.17em;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    color: #333;
+}
+.view-front-cat-block .views-row a:hover {
+    text-decoration: underline;
+}
+.view-front-cat-block .views-field-created {
+    font-size: 85%;
+}
+/* End Front Page Blocks */
