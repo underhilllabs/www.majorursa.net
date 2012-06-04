@@ -1,12 +1,9 @@
 <?php
-// $Id: page.tpl.php,v 1.1.2.2.4.2 2011/01/11 01:08:49 dvessel Exp $
+// 
 ?>
 
-
-<div id="page" class="container-16 clearfix">
-
-
-  <div id="site-header" class="clearfix">
+<div id="header-top" >
+ <div id="header-container" class="container-16 clearfix">
     <div id="branding" class="grid-16 clearfix">
     <?php if ($linked_logo_img): ?>
       <span id="logo" class="grid-3 alpha"><?php print $linked_logo_img; ?></span>
@@ -23,12 +20,23 @@
        </div>
     <?php endif; ?>
     </div>
+ 
 
+ 
   <?php if ($main_menu_links ): ?>
     <div id="site-menu" class="grid-16">
       <?php print $main_menu_links; ?>
     </div>
   <?php endif; ?>
+
+
+ </div>
+</div>
+
+<div id="page" class="container-16 clearfix">
+
+
+  <div id="site-header" class="clearfix">
 
   <?php if ($page['search_box']): ?>
     <div id="search-box" class="grid-6 prefix-10"><?php print render($page['search_box']); ?></div>

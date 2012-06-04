@@ -1,5 +1,25 @@
 /* $Id: styles.css,v 1.1.2.2.2.1 2011/01/11 01:08:49 dvessel Exp $ */
 
+
+#header-top {
+  width: 100%;
+  background: #300A24;
+  margin-left: auto;
+  margin-right: auto;
+}
+.sidebar .block {
+    background-color: #EDEDE7;
+    border: 1px solid #E7E7E7;
+    padding: 15px 20px;
+    margin: 0 0 20px;
+}
+.sidebar h2 {
+    border-bottom: 1px solid #D6D6D6;
+    margin-top: 0em;
+}
+.sidebar li {
+    padding-bottom: 0.5em !important;
+}
 h1#site-name {
   margin-bottom: 0;
 }
@@ -91,11 +111,32 @@ body, caption, th, td, input, textarea, select, option, legend, fieldset {
    float: left ;
    margin-right: 15px;
 }
-.view-frontpage-slideshow .views-field-title a {
-   decoration: none;
+.view-frontpage-slideshow  a {
+   text-decoration: none;
    color: #301313;
+}
+.view-frontpage-slideshow  a:hover {
+   text-decoration: underline;
+}
+.view-frontpage-slideshow .views-field-title a {
    font-size: 1.538em;
    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+   padding-bottom: 2em;
+}
+.views-slideshow-controls-text-pause a {
+   display: hidden;
+}
+#views_slideshow_controls_text_pause_frontpage_slideshow-block_2 {
+   display: none;
+}
+#views_slideshow_controls_text_next_frontpage_slideshow-block_2 img, #views_slideshow_controls_text_previous_frontpage_slideshow-block_2 img {
+   padding-top: 5px;
+}
+.view-frontpage-slideshow li.views-row {
+   padding-bottom: 0.5em!important;
+}
+.view-frontpage-slideshow {
+   width: 100%;
 }
 
 /* End Views Slideshow */
@@ -145,5 +186,8 @@ body, caption, th, td, input, textarea, select, option, legend, fieldset {
 }
 .view-front-cat-block .views-field-created {
     font-size: 85%;
+}
+.view-front-block-title h2 {
+   margin-bottom: 0.2em;
 }
 /* End Front Page Blocks */
