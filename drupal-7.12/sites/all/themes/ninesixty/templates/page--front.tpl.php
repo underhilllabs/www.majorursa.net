@@ -104,12 +104,38 @@
 <?php endif; ?>
 
 
-  <div id="footer" class="prefix-1 suffix-1">
-    <?php if ($page['footer']): ?>
-      <div id="footer-region" class="region grid-14 clearfix">
-        <?php print render($page['footer']); ?>
+
+</div>
+<div id="footer-wrapper">
+ <div id="footer-container" class="container-16 clearfix">
+  <div id="footer1" class="alpha grid-4">
+    <?php if ($page['footer1']): ?>
+      <div id="footer-region1" class="region clearfix">
+        <?php print render($page['footer1']); ?>
       </div>
     <?php endif; ?>
   </div>
+
+  <div id="footer2" class="grid-6">
+    <?php if ($page['footer2']): ?>
+      <div id="footer-region2" class="region clearfix">
+        <?php print render($page['footer2']); ?>
+      </div>
+    <?php endif; ?>
+
+  </div>
+
+  <div id="footer3" class="grid-6">
+    <?php if ($page['footer3']): ?>
+      <div id="footer-region3" class="region clearfix omega">
+        <?php print render($page['footer3']); ?>
+      </div>
+    <?php endif; ?>
+  </div>
+
+
+ </div>
+
+
 
 </div>

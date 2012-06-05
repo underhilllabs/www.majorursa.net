@@ -13,7 +13,7 @@ stylesheets[all][] = styles/framework/960.css
 ; stylesheets[all][] = styles/framework/debug.css
 
 ; Theme specific styles. Any sub-themes should override this.
-stylesheets[all][] = styles/styles.css
+stylesheets[all][] = stylesheets/screen.css
 
 regions[page_top]       = Page top
 regions[header]         = Header
@@ -23,7 +23,6 @@ regions[help]           = Help
 regions[content]        = Content
 regions[sidebar_first]  = Left sidebar
 regions[sidebar_second] = Right sidebar
-regions[footer]         = Footer
 regions[page_bottom]    = Page bottom
 
 ; Custom regions. The four blocks for Front Page. Only appear in page-front.tpl.php
@@ -31,6 +30,10 @@ regions[front_cat_1]    = Front Category First
 regions[front_cat_2]    = Front Category Second
 regions[front_cat_3]    = Front Category Third
 regions[front_cat_4]    = Front Category Fourth
+regions[footer1]        = Footer 1
+regions[footer2]        = Footer 2
+regions[footer3]        = Footer 3
+
 
 
 ; Information added by drupal.org packaging script on 2011-01-11
