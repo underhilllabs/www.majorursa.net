@@ -1,5 +1,7 @@
 * Major Ursa website
 
-A developer blog by Bart Lantz
+Major Ursa is a development blog written by Bart Lantz.
+
+It focuses on Drupal, Python, Ruby, Vim, Emacs, Git and a few of my book reviews.
 
 [[https://lh5.googleusercontent.com/-Cqi9aKfd0Qs/T818zrzROZI/AAAAAAAACu0/SElHxG6p8P0/s800/New%252520Photo.png]]
