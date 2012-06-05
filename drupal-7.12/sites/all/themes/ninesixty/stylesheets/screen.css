@@ -1,0 +1,381 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* $Id: styles.css,v 1.1.2.2.2.1 2011/01/11 01:08:49 dvessel Exp $ */
+/* line 12, ../sass/screen.scss */
+#header-top {
+  width: 100%;
+  background: #300A24;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 19, ../sass/screen.scss */
+.node-teaser .content {
+  margin-top: 10px;
+}
+
+/* line 22, ../sass/screen.scss */
+.sidebar .block {
+  background-color: #EDEDE7;
+  border: 1px solid #E7E7E7;
+  padding: 15px 20px;
+  margin: 0 0 20px;
+}
+/* line 27, ../sass/screen.scss */
+.sidebar .block h2 {
+  border-bottom: 1px solid #D6D6D6;
+  margin-top: 0em;
+}
+/* line 31, ../sass/screen.scss */
+.sidebar .block li {
+  padding-bottom: 0.5em !important;
+}
+
+/* line 37, ../sass/screen.scss */
+h1#site-name {
+  margin-bottom: 0;
+}
+
+/* line 47, ../sass/screen.scss */
+#site-header,
+#site-subheader,
+#footer-region,
+.column,
+.node,
+.comment,
+.block {
+  margin-bottom: 1.5em;
+}
+
+/* line 52, ../sass/screen.scss */
+ul.main-menu,
+ul.secondary-menu {
+  display: block;
+  margin: 0;
+  padding: 5px;
+}
+/* line 56, ../sass/screen.scss */
+ul.main-menu li,
+ul.secondary-menu li {
+  border-top-left-radius: 10px;
+  -moz-border-top-left-radius: 10px;
+  -webkit-border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  -moz-border-top-right-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+}
+
+/* line 62, ../sass/screen.scss */
+#site-menu li.active {
+  background: white;
+}
+/* line 64, ../sass/screen.scss */
+#site-menu li.active a {
+  color: #300a24;
+}
+/* line 67, ../sass/screen.scss */
+#site-menu li.active a:hover {
+  text-decoration: underline;
+  color: gold;
+}
+
+/* line 72, ../sass/screen.scss */
+#footer1, #footer2, #footer3 {
+  display: inline;
+}
+
+/* line 76, ../sass/screen.scss */
+#footer-region1, #footer-region2, #footer-region3 {
+  border: 1px dashed #ddd;
+  padding: 2em;
+}
+
+/* line 82, ../sass/screen.scss */
+#footer-wrapper {
+  padding-top: 20px;
+  background: #2C2C28;
+  margin-bottom: 0;
+  padding-bottom: 20px;
+}
+/* line 87, ../sass/screen.scss */
+#footer-wrapper .block-block {
+  margin-top: 20px;
+  background: #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+
+/* line 94, ../sass/screen.scss */
+#branding {
+  /* margin-left: -30%; */
+  /* padding-left: -30%; */
+  /* margin-right: 30%; */
+  /* padding-right: 30%; */
+  background: #300A24;
+}
+
+/* line 101, ../sass/screen.scss */
+#branding h1 {
+  margin-top: .9em;
+}
+
+/* line 104, ../sass/screen.scss */
+#branding h1 a {
+  color: white;
+  text-decoration: none;
+}
+
+/* line 109, ../sass/screen.scss */
+#site-menu li {
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+/* line 112, ../sass/screen.scss */
+#site-menu li a {
+  text-decoration: none;
+  color: white;
+}
+/* line 116, ../sass/screen.scss */
+#site-menu li a:hover {
+  text-decoration: underline;
+  color: gold;
+}
+
+/* line 123, ../sass/screen.scss */
+h1 {
+  font-size: 2em;
+  line-height: 1.385em;
+  margin: 0 0 .692em 0;
+  font-weight: normal;
+}
+
+/* line 129, ../sass/screen.scss */
+h2 {
+  font-size: 1.538em;
+  line-height: 1.35em;
+  margin: 0 0 .45em 0;
+  font-weight: normal;
+  display: block;
+  -webkit-margin-before: 0.83em;
+  -webkit-margin-after: 0.83em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
+
+/* line 140, ../sass/screen.scss */
+h3 {
+  font-size: 1.231em;
+  line-height: 1.6875em;
+  margin: 0 0 .5625em 0;
+  display: block;
+  font-size: 1.17em;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-weight: bold;
+}
+
+/* line 152, ../sass/screen.scss */
+h1, h2, h3, h4 {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+/* line 155, ../sass/screen.scss */
+body, caption, th, td, input, textarea, select, option, legend, fieldset {
+  font-family: "Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
+}
+
+/* line 160, ../sass/screen.scss */
+h1, h2, h3, h4 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* line 166, ../sass/screen.scss */
+.page-notes .view-content h3 {
+  margin-top: 10px;
+}
+/* line 168, ../sass/screen.scss */
+.page-notes .view-content h3 a {
+  font-size: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+}
+/* line 174, ../sass/screen.scss */
+.page-notes .view-content h3 a:hover {
+  text-decoration: underline;
+}
+
+/* Start Views slideshow  */
+/* line 182, ../sass/screen.scss */
+.view-frontpage-slideshow {
+  border: 1px #CCC dotted;
+  padding: 15px;
+}
+
+/* line 186, ../sass/screen.scss */
+.view-frontpage-slideshow h2 {
+  font-size: 2em;
+  line-height: 1.385em;
+  margin: 0 0 .692em 0;
+  font-weight: normal;
+}
+
+/* line 192, ../sass/screen.scss */
+.view-frontpage-slideshow img {
+  float: left;
+  margin-right: 15px;
+}
+
+/* line 196, ../sass/screen.scss */
+.view-frontpage-slideshow a {
+  text-decoration: none;
+  color: #301313;
+}
+
+/* line 200, ../sass/screen.scss */
+.view-frontpage-slideshow a:hover {
+  text-decoration: underline;
+}
+
+/* line 203, ../sass/screen.scss */
+.view-frontpage-slideshow .views-field-title a {
+  font-size: 1.538em;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  padding-bottom: 2em;
+}
+
+/* line 208, ../sass/screen.scss */
+.views-slideshow-controls-text-pause a {
+  display: hidden;
+}
+
+/* line 211, ../sass/screen.scss */
+#views_slideshow_controls_text_pause_frontpage_slideshow-block_2 {
+  display: none;
+}
+
+/* line 214, ../sass/screen.scss */
+#views_slideshow_controls_text_next_frontpage_slideshow-block_2 img, #views_slideshow_controls_text_previous_frontpage_slideshow-block_2 img {
+  padding-top: 5px;
+}
+
+/* line 217, ../sass/screen.scss */
+.view-frontpage-slideshow li.views-row {
+  padding-bottom: 0.5em!important;
+}
+
+/* line 220, ../sass/screen.scss */
+.view-frontpage-slideshow {
+  width: 100%;
+}
+
+/* End Views Slideshow */
+/* Start Front Page Blocks */
+/* line 227, ../sass/screen.scss */
+.view-front-cat-block {
+  background: white;
+  padding: 0.2em 1em 1em 1em;
+}
+
+/* line 231, ../sass/screen.scss */
+.view-front-cat-block h1 {
+  text-decoration: none;
+  margin-bottom: 0.0em;
+}
+
+/* line 235, ../sass/screen.scss */
+.view-front-cat-block img {
+  float: left;
+  padding: 3px;
+  border: #999 solid 1px;
+  background: white;
+  margin-right: 0.3em;
+}
+
+/* line 242, ../sass/screen.scss */
+.view-front-block-title {
+  border-bottom: 5px solid #300A24;
+  margin: 0 0 1em 0;
+}
+
+/* line 247, ../sass/screen.scss */
+.view-front-cat-block .views-row {
+  padding-bottom: .6em;
+  border-bottom: 1px dashed #999;
+  margin-bottom: 1em;
+}
+
+/* line 253, ../sass/screen.scss */
+.view-front-cat-block .views-row a {
+  text-decoration: none;
+  /* font-size: 1.231em; */
+  margin: 0 0 0 0;
+  display: block;
+  font-size: 1.17em;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 0em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* line 266, ../sass/screen.scss */
+.view-front-cat-block .views-row a:hover {
+  text-decoration: underline;
+}
+
+/* line 269, ../sass/screen.scss */
+.view-front-cat-block .views-field-created {
+  font-size: 85%;
+}
+
+/* line 272, ../sass/screen.scss */
+.view-front-block-title h2 {
+  margin-bottom: 0.2em;
+}
+
+/* End Front Page Blocks */
+/* line 277, ../sass/screen.scss */
+.node-teaser {
+  padding-bottom: 1em;
+  margin-bottom: 4em;
+  border-bottom: 1px #ddd solid;
+}
+/* line 279, ../sass/screen.scss */
+.node-teaser h2 a {
+  font-size: 32px;
+  color: #181818;
+  text-decoration: none;
+}
+/* line 284, ../sass/screen.scss */
+.node-teaser h2 a:hover {
+  font-size: 32px;
+  text-decoration: underline;
+}
+/* line 289, ../sass/screen.scss */
+.node-teaser ul.inline {
+  float: right;
+}
+
+/* line 297, ../sass/screen.scss */
+.field-items {
+  margin-bottom: 15px;
+}
+/* line 298, ../sass/screen.scss */
+.field-items .field-item {
+  display: inline;
+  padding-right: 10px;
+  font-size: 12px;
+}
+
+/* line 306, ../sass/screen.scss */
+.breadcrumb {
+  display: none;
+}
